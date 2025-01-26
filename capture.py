@@ -17,13 +17,13 @@ class TrafficRecorder:
         os.makedirs(self.output_dir, exist_ok=True)
         self.process = None
 
-    def _generate_filename(self, organization):
+    def _generate_filename(self, organization, index):
         timestamp = time.strftime("%Y%m%d%H%M%S")
-        return os.path.join(self.output_dir, f"{organization}_{timestamp}.pcap")
+        return os.path.join(self.output_dir, f"{index}_{organization}_{timestamp}.pcap")
 
-    def start_listening(self, organization):
+    def start_listening(self, organization, index):
         stop_event.clear()
-        filename = self._generate_filename(organization)
+        filename = self._generate_filename(organization, index)
         cmd = ['tshark', '-i', self.interface, '-w', filename]
         # cmd = ['tshark', '-i', self.interface, '-w', filename, '-f', 'tcp port 80']
 
@@ -39,9 +39,9 @@ class TrafficRecorder:
             self.process.wait()  # 等待进程完全退出
 
 
-def main(urls, organization):
+def main(urls, organization, index):
     traffic_recorder = TrafficRecorder(interface=config['spider']['interface'], output_dir=config['spider']['output_dir'])
-    capture_thread = threading.Thread(target=traffic_recorder.start_listening, args=(organization,))
+    capture_thread = threading.Thread(target=traffic_recorder.start_listening, args=(organization,index))
     capture_thread.start()
 
     # 流量主程序
