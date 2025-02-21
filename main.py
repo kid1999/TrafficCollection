@@ -1,6 +1,4 @@
-import os
 import re
-import shutil
 
 import pandas as pd
 
@@ -12,15 +10,6 @@ def extract_urls(text):
     url_pattern = r'https?://[^\s\',\]]+'  # 匹配 http 或 https 开头，直到空白字符、逗号或右方括号为止
     urls = re.findall(url_pattern, text)
     return urls
-
-
-def check_disk_space(threshold_gb=10):
-    disk_usage = shutil.disk_usage(os.path.dirname(os.path.abspath(__file__)))
-    free_gb = disk_usage.free / (1024 ** 3)  # 转换为 GB
-    if free_gb < threshold_gb:
-        print(f"警告：磁盘空间不足，剩余空间为 {free_gb:.2f} GB，低于阈值 {threshold_gb} GB，即将退出程序。")
-        return True
-    return False
 
 
 def read_urls(path):
@@ -38,13 +27,34 @@ def read_urls(path):
 
 if __name__ == '__main__':
 
+    # 按组织采集
+    # urls, organizations = read_urls('./config/organizations_github_urls_.csv')
+    # index = 0
+    # for url, organization in zip(urls, organizations):
+    #     if check_disk_space(threshold_gb=10):
+    #         break
+    #     main(url, organization, index)
+    #     index += 1
+
+
+
+    # # 按仓库采集
+    # urls, organizations = read_urls('./config/organizations_github_urls_.csv')
+    # index = 0
+    # for url in urls[0]:
+    #     organization = organizations[0] + '-' + url.split('/')[-1]
+    #     main([url],organization,index)
+    #     # print([url], organization)
+    #     index += 1
+
     urls, organizations = read_urls('./config/organizations_github_urls_.csv')
     index = 0
-    for url, organization in zip(urls, organizations):
-        if check_disk_space(threshold_gb=10):
-            break
-        main(url, organization, index)
-        index += 1
+    for url_, organization in zip(urls[1:], organizations[1:]):
+        for url in url_:
+            name = organization + '-' + url.split('/')[-1]
+            main([url], name, index)
+            # print(name, url)
+            index += 1
 
 
 

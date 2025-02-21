@@ -1,3 +1,4 @@
+import gc
 import os
 import subprocess
 import threading
@@ -51,6 +52,11 @@ def main(urls, organization, index):
     stop_event.set()  # 设置标志位，通知子线程停止
     capture_thread.join()
     logger.info('Finished {}.'.format(organization))
+
+    # 手动释放资源
+    del traffic_recorder
+    del spider
+    gc.collect()
 
 
 # if __name__ == "__main__":
