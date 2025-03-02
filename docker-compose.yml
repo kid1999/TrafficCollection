@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: traffic
     volumes:
-      - /traffic/datas:/traffic/datas
+      - /traffic:/traffic
     cap_add:
       - NET_ADMIN  # 允许抓包所需的权限
     stdin_open: true

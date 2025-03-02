@@ -34,7 +34,7 @@ RUN apt-get update && apt-get install -y \
 
 
 # 复制程序代码
-COPY . /traffic
+COPY requirements.txt /traffic
 
 # 安装 Python 依赖
 RUN pip3 install --upgrade pip && \
@@ -42,4 +42,4 @@ RUN pip3 install --upgrade pip && \
     playwright install chromium
 
 # 设置默认命令
-CMD ["python", "main.py"]
+#CMD ["python", "main.py"]
