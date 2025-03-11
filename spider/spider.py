@@ -1,10 +1,11 @@
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 
 from config.logger import logger
+from config.config import config
 
 
 class SequentialSpider:
-    def __init__(self, urls, timeout=10000):
+    def __init__(self, urls, timeout=config['spider']['page_timeout']):
         self.urls = urls
         self.timeout = timeout
 
@@ -23,14 +24,19 @@ class SequentialSpider:
                     logger.info(f"{i} - Scraping {url}...")
                     page = context.new_page()
                     # Set headers to disable cache
-                    page.set_extra_http_headers({
-                        "Cache-Control": "no-cache, no-store, must-revalidate",
-                        "Pragma": "no-cache",
-                        "Expires": "0"
-                    })
+                    page.set_extra_http_headers(
+                        {
+                            "Cache-Control": "no-cache, no-store, must-revalidate",
+                            "Pragma": "no-cache",
+                            "Expires": "0",
+                        }
+                    )
                     page.goto(url, timeout=self.timeout)
                     content = page.content()
-                    logger.info(f'success access: {url}')
+                    page.wait_for_load_state(
+                        "networkidle", timeout=self.timeout
+                    )  # 等待所有请求完成
+                    logger.info(f"success access: {url}")
                 except PlaywrightTimeoutError:
                     logger.debug(f"Timeout while loading {url}. Skipping...")
                 except Exception as e:
@@ -51,4 +57,3 @@ class SequentialSpider:
 #
 #     spider = SequentialSpider(urls, timeout=5000)
 #     spider.scrape()
-

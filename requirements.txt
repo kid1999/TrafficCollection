@@ -1,2 +1,6 @@
 pandas
 playwright
+scapy
+boto3
+psutil
+pyshark

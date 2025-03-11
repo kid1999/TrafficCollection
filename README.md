@@ -1,6 +1,8 @@
 # TrafficCollection
 Collect traffic from GitHub
 
+![System flow](./flow.png)
+
 ### Config
 Modify system configuration files, such as project folder paths.
 
@@ -52,4 +54,4 @@ Pack and compress, download form remote server.
 
 
 ## Question (TODO)
-1. When the number of pacp files exceeds about 2K, the program will stop?
+1. Spider just wait DOM success load but all resource?
