@@ -56,6 +56,8 @@ docker run -d -p 8000:8000 \
 Finally, all pcap files and logs will be output to `/traffic/datas/`
 
 #### CS Mode
+##### Server:
+
 Clone repository to `/traffic` directory.
 ```shell
 git clone https://github.com/kid1999/TrafficCollection.git
@@ -70,7 +72,14 @@ run
 docker-compose up
 ```
 
-Finally, all pcap files and logs will be output to `/traffic/datas/`
+##### Client:
+Execute file receiving program, automatically download pcap file.
+
+```shell
+python client.py
+```
+
+Finally, all pcap files and logs will be output to `output_dir`
 
 
 
