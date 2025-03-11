@@ -1,10 +1,12 @@
 import logging
 import logging.handlers
 import os
+
 from config.config import config
 
+
 # 配置日志基本设置
-def setup_logging(filename= "default.log"):
+def setup_logging(filename="default.log"):
     # 创建一个logger
     logger = logging.getLogger(filename.split(".")[0])
     logger.setLevel(logging.DEBUG)  # 可以根据需要设置不同的日志级别

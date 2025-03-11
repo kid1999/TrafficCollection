@@ -1,4 +1,3 @@
-import logging
 import os
 import time
 
@@ -10,7 +9,7 @@ from config.logger import logger
 
 class MinioFileWatcher:
     def __init__(
-        self, endpoint_url, access_key, secret_key, bucket_name, local_download_path
+            self, endpoint_url, access_key, secret_key, bucket_name, local_download_path
     ):
         self.endpoint_url = endpoint_url
         self.access_key = access_key

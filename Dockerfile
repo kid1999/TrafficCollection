@@ -42,4 +42,4 @@ RUN pip3 install --upgrade pip && \
     playwright install chromium
 
 # 设置默认命令
-#CMD ["python", "main.py"]
+#CMD ["python", "single.py"]

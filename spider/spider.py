@@ -1,7 +1,7 @@
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 
-from config.logger import logger
 from config.config import config
+from config.logger import logger
 
 
 class SequentialSpider:
@@ -31,11 +31,8 @@ class SequentialSpider:
                             "Expires": "0",
                         }
                     )
-                    page.goto(url, timeout=self.timeout)
+                    page.goto(url, timeout=self.timeout, wait_until=config['spider']['wait_until'])
                     content = page.content()
-                    page.wait_for_load_state(
-                        "networkidle", timeout=self.timeout
-                    )  # 等待所有请求完成
                     logger.info(f"success access: {url}")
                 except PlaywrightTimeoutError:
                     logger.debug(f"Timeout while loading {url}. Skipping...")
@@ -45,7 +42,6 @@ class SequentialSpider:
                     page.close()
 
             browser.close()
-
 
 # Example usage:
 # if __name__ == "__main__":

@@ -10,5 +10,4 @@ config = configparser.ConfigParser()
 config_default_path = os.path.join(current_dir, "config.ini")
 config.read(config_default_path)
 
-
 # print(config['spider']['interface'])

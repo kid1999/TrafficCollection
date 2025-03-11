@@ -32,15 +32,47 @@ services:
 
 
 ### Deploy
+> The program is divided into two modes. 
+> - Standalone mode is designed to collect traffic data locally and store files locally. 
+> - CS mode is designed for remote servers to collect traffic, and files are automatically transferred to local clients after being cached by Minio.
+
+#### Standalone Mode
+Clone repository to `/traffic` directory.
+```shell
+git clone https://github.com/kid1999/TrafficCollection.git
+```
+
+Remove the last `CMD ["python", "single.py"]` annotation from `Dockerfile` and run it directly.
+```shell
+docker build -t traffic .
+```
+
+```shell
+docker run -d -p 8000:8000 \
+    -v /traffic:/traffic \
+    --name my_traffic \
+    traffic
+```
+Finally, all pcap files and logs will be output to `/traffic/datas/`
+
+#### CS Mode
+Clone repository to `/traffic` directory.
+```shell
+git clone https://github.com/kid1999/TrafficCollection.git
+```
+
 deploy with docker-compose.
 ```shell
 docker-compose build
 ```
-
-### Run
+run
 ```shell
 docker-compose up
 ```
+
+Finally, all pcap files and logs will be output to `/traffic/datas/`
+
+
 
 ### Data Migration
 ```shell

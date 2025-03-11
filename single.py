@@ -1,11 +1,10 @@
 import os
 import re
 import subprocess
-import time
 
 import pandas as pd
 
-from spider.capture_minio import main
+from spider.capture_local import main
 
 
 def extract_urls(text):
@@ -54,34 +53,6 @@ def kill_dumpcap():
 
 
 if __name__ == '__main__':
-
-    # 按组织采集
-    # urls, organizations = read_urls('./config/organizations_github_urls_.csv')
-    # index = 0
-    # for url, organization in zip(urls, organizations):
-    #     if check_disk_space(threshold_gb=10):
-    #         break
-    #     main(url, organization, index)
-    #     index += 1
-
-    # # 按仓库采集
-    # urls, organizations = read_urls('./config/organizations_github_urls_.csv')
-    # index = 0
-    # for url in urls[0]:
-    #     organization = organizations[0] + '-' + url.split('/')[-1]
-    #     main([url],organization,index)
-    #     # print([url], organization)
-    #     index += 1
-
-    # urls, organizations = read_urls('./config/top_1w_urls.csv')
-    # index = 0
-    # for url_, organization in zip(urls[1:], organizations[1:]):
-    #     for url in url_:
-    #         name = organization + '-' + url.split('/')[-1]
-    #         main([url], name, index)
-    #         # print(name, url)
-    #         index += 1
-
     # top 1w github仓库
     urls, names = read_urls_by_cow('./config/top_1w_urls.txt')
     index = 0
@@ -89,7 +60,6 @@ if __name__ == '__main__':
     for url, name in zip(urls[index:end], names[index:end]):
         for _ in range(100):
             main([url], name, index)
-            time.sleep(1.5)
         index += 1
         # 额外检查 dumpcap 是否仍在运行
         kill_dumpcap()
