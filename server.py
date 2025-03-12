@@ -4,6 +4,7 @@ import subprocess
 import time
 
 import pandas as pd
+import psutil
 
 from spider.capture_minio import main
 
@@ -53,6 +54,16 @@ def kill_dumpcap():
         print(f"终止 dumpcap 进程失败: {e}")
 
 
+def kill_zombie_processes():
+    for proc in psutil.process_iter(['pid', 'ppid', 'name', 'status']):
+        if proc.info['status'] == psutil.STATUS_ZOMBIE and proc.info['name'] == 'headless_shell':
+            try:
+                os.waitpid(proc.info['pid'], os.P_NOWAIT)
+                print(f"清理僵尸进程：PID {proc.info['pid']}")
+            except Exception as e:
+                print(f"清理失败：{e}")
+
+
 if __name__ == '__main__':
 
     # 按组织采集
@@ -89,6 +100,7 @@ if __name__ == '__main__':
     for url, name in zip(urls[index:end], names[index:end]):
         for _ in range(100):
             main([url], name, index)
+            kill_zombie_processes()
             time.sleep(1.5)
         index += 1
         # 额外检查 dumpcap 是否仍在运行

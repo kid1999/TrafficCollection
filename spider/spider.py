@@ -5,7 +5,7 @@ from config.logger import logger
 
 
 class SequentialSpider:
-    def __init__(self, urls, timeout=config['spider']['page_timeout']):
+    def __init__(self, urls, timeout=int(config['spider']['page_timeout'])):
         self.urls = urls
         self.timeout = timeout
 
@@ -14,42 +14,30 @@ class SequentialSpider:
         Perform sequential scraping of the given URLs.
         """
         with sync_playwright() as p:
-            browser = p.chromium.launch(headless=True)
-            # Use incognito context to avoid retaining session data or cache
-            context = browser.new_context(ignore_https_errors=True)
-            context.set_default_navigation_timeout(self.timeout)
-
-            for i, url in enumerate(self.urls):
-                try:
-                    logger.info(f"{i} - Scraping {url}...")
-                    page = context.new_page()
-                    # Set headers to disable cache
-                    page.set_extra_http_headers(
-                        {
-                            "Cache-Control": "no-cache, no-store, must-revalidate",
-                            "Pragma": "no-cache",
-                            "Expires": "0",
-                        }
-                    )
-                    page.goto(url, timeout=self.timeout, wait_until=config['spider']['wait_until'])
-                    content = page.content()
-                    logger.info(f"success access: {url}")
-                except PlaywrightTimeoutError:
-                    logger.debug(f"Timeout while loading {url}. Skipping...")
-                except Exception as e:
-                    logger.debug(f"Error scraping {url}: {e}")
-                finally:
-                    page.close()
-
-            browser.close()
-
-# Example usage:
-# if __name__ == "__main__":
-#     urls = [
-#         "https://baidu.com",
-#         "https://qq.com",  # Deliberate delay
-#         "https://sohu.com",  # Non-existent URL
-#     ]
-#
-#     spider = SequentialSpider(urls, timeout=5000)
-#     spider.scrape()
+            with p.chromium.launch(headless=True) as browser:  # 确保浏览器正确关闭
+                with browser.new_context(ignore_https_errors=True) as context:  # 确保上下文正确关闭
+                    context.set_default_navigation_timeout(self.timeout)
+                    for i, url in enumerate(self.urls):
+                        page = None  # 初始化 page 为 None
+                        try:
+                            logger.info(f"{i} - Scraping {url}...")
+                            page = context.new_page()  # 创建新页面
+                            page.set_extra_http_headers(
+                                {
+                                    "Cache-Control": "no-cache, no-store, must-revalidate",
+                                    "Pragma": "no-cache",
+                                    "Expires": "0",
+                                }
+                            )
+                            page.goto(url, timeout=self.timeout, wait_until=config['spider']['wait_until'])
+                            content = page.content()
+                            page.close()
+                            logger.info(f"Success accessing: {url}")
+                        except PlaywrightTimeoutError:
+                            logger.warning(f"Timeout while loading {url}. Skipping...")
+                        except Exception as e:
+                            logger.error(f"Error scraping {url}: {e}", exc_info=True)  # 记录完整的异常信息
+                        finally:
+                            context.close()
+                            browser.close()
+                            logger.debug(f"Finished processing {url}")

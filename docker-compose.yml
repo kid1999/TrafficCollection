@@ -16,7 +16,7 @@ services:
       - PYTHONUNBUFFERED=1  # 确保实时输出日志
     depends_on:
       - minio  # 依赖 MinIO 服务
-    command: ["python", "main.py"]  # 容器启动时运行的默认命令
+    command: ["python", "server.py"]  # 容器启动时运行的默认命令
 
   minio:
     image: quay.io/minio/minio
