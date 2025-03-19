@@ -1,6 +1,7 @@
 import os
 import re
 import subprocess
+import time
 
 import pandas as pd
 
@@ -60,6 +61,7 @@ if __name__ == '__main__':
     for url, name in zip(urls[index:end], names[index:end]):
         for _ in range(100):
             main([url], name, index)
+            time.sleep(1.5)
         index += 1
         # 额外检查 dumpcap 是否仍在运行
         kill_dumpcap()
