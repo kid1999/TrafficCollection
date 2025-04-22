@@ -1,2 +1,5 @@
-./datas
+datas
 *.log
+.venv
+analysis
+config.ini

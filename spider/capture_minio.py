@@ -23,8 +23,11 @@ def kill_process_and_children(parent_pid):
         for child in still_alive:
             child.kill()
         parent.terminate()
+        parent.wait(timeout=2)  # 等待父进程结束
     except psutil.NoSuchProcess:
         pass
+    except psutil.TimeoutExpired:
+        parent.kill()  # 如果超时未结束，强制杀掉
 
 
 class TrafficCapture:
@@ -38,11 +41,12 @@ class TrafficCapture:
             region_name="us-east-1",
             verify=False,
         )
-        self.bucket = config["minio"]["bucket_name"]  # 存储桶名称
+        self.bucket = config["minio"]["bucket_name"]
         self.tshark_process = None
         self.pcap_data = io.BytesIO()
         self.capture_thread = None
-        self.stop_event = threading.Event()  # 线程终止标志
+        self.stop_event = threading.Event()
+        self.lock = threading.Lock()  # 添加线程锁保护共享资源
 
     def _get_target_ip(self, url):
         """解析 URL 获取目标 IP 地址"""
@@ -57,10 +61,18 @@ class TrafficCapture:
         """持续读取 tshark 输出到 pcap_data"""
         try:
             while not self.stop_event.is_set():
-                data = self.tshark_process.stdout.read(4096)  # 分块读取
+                data = self.tshark_process.stdout.read(4096)
                 if not data:
                     break
-                self.pcap_data.write(data)
+                with self.lock:  # 使用锁保护 pcap_data 的写入
+                    self.pcap_data.write(data)
+            # 捕获结束后，确保读取所有剩余数据
+            while True:
+                data = self.tshark_process.stdout.read(4096)
+                if not data:
+                    break
+                with self.lock:
+                    self.pcap_data.write(data)
         except Exception as e:
             logger.error(f"读取 tshark 输出失败: {e}")
 
@@ -75,19 +87,18 @@ class TrafficCapture:
             command = [
                 "tshark",
                 "-i",
-                self.interface,  # 指定接口
+                self.interface,
                 "-w",
                 "-",  # 输出到标准输出
-                "-a",
-                "duration:30",
+                "-F",
+                "pcap",  # 明确指定 PCAP 格式
             ]
 
-            # 启动 tshark 进程
             self.tshark_process = subprocess.Popen(
-                command, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+                command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=0  # 无缓冲
             )
 
-            # 启动独立线程读取 stdout
+            self.stop_event.clear()  # 重置停止事件
             self.capture_thread = threading.Thread(
                 target=self._capture_output, daemon=True
             )
@@ -100,33 +111,55 @@ class TrafficCapture:
             return False
 
     def stop_capture_and_upload(self, output_name):
-        if self.tshark_process:
-            logger.info("停止 tshark 捕获")
-            self.stop_event.set()  # 终止读取线程
+        """停止捕获并上传数据"""
+        if not self.tshark_process:
+            logger.warning("未启动 tshark 进程，无需停止")
+            return False
 
-            # 关闭 stdout/stderr，防止阻塞
+        logger.info("准备停止 tshark 捕获")
+        self.stop_event.set()  # 设置停止标志
+
+        # 等待捕获线程完成，确保所有数据被读取
+        if self.capture_thread:
+            self.capture_thread.join(timeout=5)
+            if self.capture_thread.is_alive():
+                logger.warning("捕获线程未及时结束")
+
+        # 优雅地终止 tshark 进程
+        try:
+            self.tshark_process.terminate()  # 尝试正常终止
+            self.tshark_process.wait(timeout=3)  # 等待进程结束
+        except subprocess.TimeoutExpired:
+            logger.warning("tshark 未正常终止，强制杀掉")
+            kill_process_and_children(self.tshark_process.pid)
+        finally:
+            # 确保关闭管道
             self.tshark_process.stdout.close()
             self.tshark_process.stderr.close()
+            self.tshark_process = None
 
-            # 确保杀掉所有相关进程
-            kill_process_and_children(self.tshark_process.pid)
-            self.tshark_process.wait()
+        # 上传捕获的数据
+        try:
+            with self.lock:  # 确保线程安全地读取 pcap_data
+                pcap_content = self.pcap_data.getvalue()
+                if not pcap_content:
+                    logger.warning("捕获数据为空")
+                    return False
 
-            try:
                 logger.info(f"开始上传 {output_name} 到 MinIO")
                 self.s3_client.put_object(
                     Body=self.pcap_data.getvalue(), Bucket=self.bucket, Key=output_name
                 )
                 logger.info(f"上传 {output_name} 到 MinIO 成功")
                 return True
-            except Exception as e:
-                logger.error(f"上传失败: {e}")
-                return False
-            finally:
+        except Exception as e:
+            logger.error(f"上传失败: {e}")
+            return False
+        finally:
+            with self.lock:
                 self.pcap_data.seek(0)
                 self.pcap_data.truncate()
-                self.tshark_process = None
-                self.capture_thread = None
+            self.capture_thread = None
 
 
 def run_task(urls, organization, index):

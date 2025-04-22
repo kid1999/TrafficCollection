@@ -53,15 +53,28 @@ def kill_dumpcap():
         print(f"终止 dumpcap 进程失败: {e}")
 
 
+def get_raw_urls(path):
+    urls = []
+    names = []
+    with open(path, 'r') as f:
+        lines = f.readlines()
+
+    for line in lines:
+        urls.append("http://" + line.strip())
+        names.append(line.strip())
+    return urls, names
+
+
+
 if __name__ == '__main__':
     # top 1w github仓库
-    urls, names = read_urls_by_cow('./config/top_1w_urls.txt')
+    urls, names = get_raw_urls('./config/urls.txt')
     index = 0
     end = 1000
     for url, name in zip(urls[index:end], names[index:end]):
-        for _ in range(100):
+        for _ in range(1):
             main([url], name, index)
-            time.sleep(1.5)
+            time.sleep(3)
         index += 1
         # 额外检查 dumpcap 是否仍在运行
-        kill_dumpcap()
+        # kill_dumpcap()

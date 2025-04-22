@@ -78,7 +78,7 @@ if __name__ == "__main__":
     access_key = config["minio"]["access_key"]
     secret_key = config["minio"]["secret_key"]
     bucket_name = config["minio"]["bucket_name"]
-    local_download_path = r"D:\code\Traffic\TrafficCollection"  # 本地下载路径
+    local_download_path = r"E:\dataset\hot_top_1k"  # 本地下载路径
 
     watcher = MinioFileWatcher(endpoint_url, access_key, secret_key, bucket_name, local_download_path, max_workers=4, batch_size=10)
     watcher.watch_and_download()

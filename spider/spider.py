@@ -29,9 +29,7 @@ class SequentialSpider:
                                     "Expires": "0",
                                 }
                             )
-                            # page.goto(url, timeout=self.timeout, wait_until=config['spider']['wait_until'])
-                            page.goto(url, timeout=self.timeout)
-                            page.wait_for_load_state(state=config['spider']['wait_until'], timeout=self.timeout)
+                            page.goto(url, timeout=self.timeout, wait_until=config['spider']['wait_until'])
                             content = page.content()
                             page.close()
                             logger.info(f"Success accessing: {url}")

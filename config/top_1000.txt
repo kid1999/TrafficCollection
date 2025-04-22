@@ -1,0 +1,1000 @@
+en.wikipedia.org	Reference
+youtube.com	Entertainment
+instagram.com	Social Networks
+facebook.com	Social Networks
+reddit.com	Social Networks
+pinterest.com	Social Networks
+whatsapp.com	Internet and Telecom
+play.google.com	Shopping
+cricbuzz.com	Sports
+openai.com	Science
+microsoft.com	Computers and Electronics
+apple.com	Computers and Electronics
+es.wikipedia.org	Reference
+imdb.com	Entertainment
+amazon.com	Shopping
+espncricinfo.com	Sports
+x.com	Social Networks
+tiktok.com	Social Networks
+de.wikipedia.org	Reference
+fr.wikipedia.org	Reference
+canva.com	Computers and Electronics
+translate.google.com	Internet and Telecom
+ja.wikipedia.org	Reference
+globo.com	News
+fandom.com	Entertainment
+yahoo.co.jp	News
+netflix.com	Entertainment
+spotify.com	Entertainment
+it.wikipedia.org	Reference
+nytimes.com	News
+espn.com	Sports
+ru.wikipedia.org	Reference
+pt.wikipedia.org	Reference
+mayoclinic.org	Health
+linkedin.com	Jobs and Education
+detik.com	News
+sattamatkadpboss.co	Entertainment
+quora.com	Reference
+ilovepdf.com	Computers and Electronics
+bbc.co.uk	News
+zh.wikipedia.org	Reference
+indeed.com	Jobs and Education
+bbc.com	News
+amazon.in	Shopping
+uol.com.br	News
+clevelandclinic.org	Health
+google.com	Internet and Telecom
+adobe.com	Computers and Electronics
+roblox.com	Games
+pl.wikipedia.org	Reference
+steampowered.com	Games
+amazon.co.jp	Shopping
+id.wikipedia.org	Reference
+rakuten.co.jp	Shopping
+indiatimes.com	News
+amazon.de	Shopping
+nih.gov	Health
+ikea.com	Home and Garden
+poki.com	Games
+investing.com	Finance
+healthline.com	Health
+samsung.com	Computers and Electronics
+yelp.com	Beauty and Fitness
+tripadvisor.com	Travel
+ndtv.com	News
+flipkart.com	Shopping
+mercadolivre.com.br	Shopping
+ar.wikipedia.org	Reference
+hurriyet.com.tr	News
+tr.wikipedia.org	Reference
+cookpad.com	Food and Drink
+wise.com	Finance
+primevideo.com	Entertainment
+twitter.com	Social Networks
+chatgpt.com	Social Networks
+webmd.com	Health
+365scores.com	Sports
+booking.com	Travel
+medlineplus.gov	Health
+finance.yahoo.com	Finance
+accuweather.com	Science
+mail.yahoo.com	Internet and Telecom
+hindustantimes.com	News
+weather.com	Science
+nike.com	Shopping
+namu.wiki	Reference
+uefa.com	Sports
+amazon.co.uk	Shopping
+walmart.com	Shopping
+merriam-webster.com	Reference
+trendyol.com	Shopping
+support.google.com	Internet and Telecom
+ebay.com	Shopping
+www.gov.uk	Law and Government
+allegro.pl	Shopping
+skysports.com	Sports
+nl.wikipedia.org	Reference
+www.nhs.uk	Health
+github.com	Computers and Electronics
+hotstar.com	Entertainment
+yandex.ru	Internet and Telecom
+rottentomatoes.com	Entertainment
+britannica.com	Reference
+icc-cricket.com	Sports
+cambridge.org	Books and Literature
+moneycontrol.com	Finance
+savefrom.net	Internet and Telecom
+nba.com	Sports
+freepik.com	Entertainment
+amazon.fr	Shopping
+allrecipes.com	Food and Drink
+sahibinden.com	Shopping
+shopee.co.id	Shopping
+milliyet.com.tr	News
+cnn.com	News
+smallpdf.com	Computers and Electronics
+kompas.com	News
+etsy.com	Shopping
+www.gov.br	Law and Government
+homedepot.com	Home and Garden
+yahoo.com	News
+tradingview.com	Finance
+gsmarena.com	Computers and Electronics
+amazon.it	Shopping
+tokopedia.com	Shopping
+medicalnewstoday.com	Health
+infobae.com	News
+marca.com	Sports
+kumparan.com	News
+discord.com	Social Networks
+yandex.com.tr	Internet and Telecom
+mercadolibre.com.mx	Shopping
+msn.com	News
+deepl.com	Computers and Electronics
+goal.com	Sports
+crazygames.com	Games
+1mg.com	Health
+ssstik.io	Internet and Telecom
+epfindia.gov.in	Finance
+sarkariresult.com	Jobs and Education
+theguardian.com	News
+speedtest.net	Internet and Telecom
+msdmanuals.com	Health
+shutterstock.com	Entertainment
+wiktionary.org	Reference
+alodokter.com	Health
+indianexpress.com	News
+quillbot.com	Jobs and Education
+lequipe.fr	Sports
+sabah.com.tr	News
+vk.com	Social Networks
+nefisyemektarifleri.com	Food and Drink
+hi.wikipedia.org	Reference
+uk.wikipedia.org	Reference
+telegram.org	Internet and Telecom
+playstation.com	Games
+justdial.com	Shopping
+coinmarketcap.com	Finance
+forbes.com	Finance
+conectate.com.do	News
+vi.wikipedia.org	Reference
+ca.wikipedia.org	Reference
+mercadolibre.com.ar	Shopping
+as.com	Sports
+turkiye.gov.tr	Law and Government
+timeanddate.com	Reference
+croxyproxy.com	Internet and Telecom
+aliexpress.com	Shopping
+usatoday.com	News
+twitch.tv	Games
+aiscore.com	Sports
+target.com	Shopping
+tuasaude.com	Health
+genius.com	Entertainment
+remove.bg	Computers and Electronics
+xe.com	Finance
+onet.pl	News
+people.com	Entertainment
+interia.pl	News
+amazon.es	Shopping
+byjus.com	Jobs and Education
+allocine.fr	Entertainment
+cnnbrasil.com.br	News
+istockphoto.com	Entertainment
+amazon.com.br	Shopping
+wp.pl	News
+xsmn.mobi	Internet and Telecom
+giallozafferano.it	Food and Drink
+trustpilot.com	Business
+foxnews.com	News
+tabelog.com	Food and Drink
+altibbi.com	Health
+uptodown.com	Computers and Electronics
+paypal.com	Finance
+halodoc.com	Health
+sv.wikipedia.org	Reference
+irs.gov	Law and Government
+uidai.gov.in	Law and Government
+eksisozluk.com	Social Networks
+filmweb.pl	Entertainment
+mi.com	Computers and Electronics
+tenki.jp	Science
+thehindu.com	News
+pexels.com	Entertainment
+olx.pl	Shopping
+hepsiburada.com	Shopping
+th.wikipedia.org	Reference
+pantip.com	Social Networks
+kooora.com	Sports
+programme-tv.net	Entertainment
+leboncoin.fr	Shopping
+espn.com.br	Sports
+zillow.com	Real Estate
+livescore.com	Sports
+transfermarkt.com.tr	Sports
+t.me	Internet and Telecom
+disneyplus.com	Entertainment
+reverso.net	Reference
+hm.com	Shopping
+pixabay.com	Entertainment
+iplt20.com	Sports
+kinopoisk.ru	Entertainment
+softonic.com	Computers and Electronics
+news18.com	News
+flashscore.com.br	Sports
+liputan6.com	News
+scribd.com	Books and Literature
+ouest-france.fr	News
+fastdl.app	Internet and Telecom
+ozon.ru	Shopping
+nintendo.com	Games
+rae.es	Jobs and Education
+tribunnews.com	News
+groww.in	Finance
+mail.ru	Internet and Telecom
+heylink.me	Internet and Telecom
+marmiton.org	Food and Drink
+az24.vn	Finance
+sanook.com	News
+www.gob.mx	Law and Government
+zara.com	Shopping
+stock.yahoo.com	Finance
+carwale.com	Vehicles
+mlb.com	Sports
+sports.yahoo.com	Sports
+makemytrip.com	Travel
+terra.com.br	News
+investopedia.com	Finance
+geeksforgeeks.org	Computers and Electronics
+bbcgoodfood.com	Food and Drink
+gamewith.jp	Games
+crunchyroll.com	Entertainment
+justwatch.com	Entertainment
+delishkitchen.tv	Food and Drink
+abplive.com	News
+naver.com	Internet and Telecom
+memorial.com.tr	Health
+tempo.co	News
+olympics.com	Sports
+bola.net	Sports
+economictimes.com	Finance
+hotpepper.jp	Food and Drink
+blibli.com	Shopping
+sinoptik.ua	Science
+usps.com	Business
+calculator.net	Science
+biblegateway.com	People and Society
+shein.com	Shopping
+beinsports.com.tr	Sports
+cbssports.com	Sports
+my-best.com	Shopping
+office.com	Computers and Electronics
+epicgames.com	Games
+grammarly.com	Jobs and Education
+screener.in	Finance
+cnnindonesia.com	News
+cardekho.com	Vehicles
+nhl.com	Sports
+company-information.service.gov.uk	Business
+bikewale.com	Vehicles
+service-public.fr	Law and Government
+rutube.ru	Entertainment
+go.com	Internet and Telecom
+cdc.gov	Health
+deepseek.com	Jobs and Education
+dailymail.co.uk	News
+xbox.com	Games
+game8.jp	Games
+snaptik.app	Internet and Telecom
+tudogostoso.com.br	Food and Drink
+intuit.com	Finance
+kahoot.com	Games
+ncaa.com	Sports
+lowes.com	Home and Garden
+shiksha.com	Jobs and Education
+flightaware.com	Travel
+gramedia.com	Books and Literature
+haberturk.com	News
+fotmob.com	Sports
+youm7.com	News
+wikihow.com	Home and Garden
+lefigaro.fr	News
+mynavi.jp	Jobs and Education
+ameli.fr	Health
+canada.ca	Law and Government
+ameblo.jp	Social Networks
+mackolik.com	Sports
+olx.ua	Shopping
+consultaremedios.com.br	Health
+livehindustan.com	News
+he.wikipedia.org	Reference
+ibomma.day	Entertainment
+dzen.ru	News
+sky.it	Entertainment
+akakce.com	Shopping
+yandex.com	Internet and Telecom
+espn.com.mx	Sports
+bild.de	News
+cs.wikipedia.org	Reference
+aajtak.in	News
+mgm.gov.tr	Science
+trueid.net	Entertainment
+livemint.com	Finance
+magazineluiza.com.br	Shopping
+news.yahoo.com	News
+tripadvisor.co.uk	Travel
+lazada.co.id	Shopping
+si.com	Sports
+amazon.ca	Shopping
+my-personaltrainer.it	Health
+fazenda.gov.br	Finance
+caixa.gov.br	Finance
+hu.wikipedia.org	Reference
+zomato.com	Food and Drink
+europa.eu	Law and Government
+bookmyshow.com	Entertainment
+quizlet.com	Jobs and Education
+thegioididong.com	Shopping
+pensador.com	People and Society
+diretta.it	Sports
+elmundo.es	News
+vidobu.com	Jobs and Education
+ea.com	Games
+wattpad.com	Entertainment
+climatempo.com.br	Science
+bestbuy.com	Shopping
+nhk.or.jp	News
+blooket.com	Jobs and Education
+craigslist.org	Shopping
+olx.com.br	Shopping
+nbcnews.com	News
+corriere.it	News
+sikayetvar.com	Law and Government
+chromewebstore.google.com	Internet and Telecom
+caranddriver.com	Vehicles
+soundcloud.com	Entertainment
+medium.com	Entertainment
+weathernews.jp	Science
+indiamart.com	Business
+ultimate-guitar.com	Entertainment
+chordtela.com	Entertainment
+el.wikipedia.org	Reference
+meb.gov.tr	Jobs and Education
+thairath.co.th	News
+zdf.de	Entertainment
+kicker.de	Sports
+tiktokio.com	Internet and Telecom
+mediaset.it	Entertainment
+leroymerlin.fr	Home and Garden
+amazon.com.mx	Shopping
+ntv.com.tr	News
+minecraft.net	Games
+apnews.com	News
+nfl.com	Sports
+gismeteo.ru	Science
+bihar.gov.in	Law and Government
+fi.wikipedia.org	Reference
+jagranjosh.com	Jobs and Education
+nta.go.jp	Law and Government
+nhathuoclongchau.com.vn	Health
+india.com	News
+note.com	Entertainment
+unsplash.com	Entertainment
+vnexpress.net	News
+bundesliga.com	Sports
+binance.com	Finance
+costco.com	Shopping
+tabletki.ua	Health
+temu.com	Shopping
+cbsnews.com	News
+hdfcbank.com	Finance
+amarujala.com	News
+kakaku.com	Shopping
+realmadrid.com	Sports
+testbook.com	Jobs and Education
+rajasthan.gov.in	Law and Government
+goal4.co	People and Society
+sciencedirect.com	Science
+jagran.com	News
+vietjack.com	Jobs and Education
+webpkgcache.com	Computers and Electronics
+lance.com.br	Sports
+footmercato.net	Sports
+premierleague.com	Sports
+docomo.ne.jp	Internet and Telecom
+kleinanzeigen.de	Shopping
+91mobiles.com	Computers and Electronics
+incometax.gov.in	Law and Government
+dictionary.com	Reference
+skroutz.gr	Shopping
+filmaffinity.com	Entertainment
+hopkinsmedicine.org	Health
+myntra.com	Shopping
+parivahan.gov.in	Law and Government
+cnbc.com	Finance
+siteindices.com	Internet and Telecom
+carfax.com	Vehicles
+bhaskar.com	News
+foxsports.com	Sports
+chefkoch.de	Food and Drink
+brainly.co.id	Jobs and Education
+screenrant.com	Entertainment
+ryanair.com	Travel
+monsterhunter.com	Games
+aljazeera.com	News
+fast.com	Internet and Telecom
+icloud.com	Computers and Electronics
+haberler.com	News
+w3schools.com	Jobs and Education
+bulbagarden.net	Games
+ign.com	Games
+drugs.com	Health
+mynet.com	Internet and Telecom
+fedex.com	Business
+marketwatch.com	Finance
+usnews.com	News
+16personalities.com	People and Society
+y2mate.nu	Internet and Telecom
+tagesschau.de	News
+max.com	Shopping
+wplt20.com	Sports
+nu.or.id	People and Society
+hulu.com	Entertainment
+ebay.co.uk	Shopping
+vivo.com	Computers and Electronics
+shopee.co.th	Shopping
+24h.com.vn	News
+gemini.google.com	Computers and Electronics
+sattasport.in	Sports
+goodreads.com	Books and Literature
+hp.com	Computers and Electronics
+doz.pl	Computers and Electronics
+lanacion.com.ar	News
+ca.gov	Law and Government
+mawdoo3.com	Reference
+weblio.jp	Reference
+goodreturns.in	Finance
+mykhel.com	Sports
+tesla.com	Vehicles
+goo.ne.jp	Internet and Telecom
+shopee.com.br	Shopping
+meteofor.com.ua	Science
+shopee.vn	Shopping
+tripadvisor.in	Travel
+orange.fr	Internet and Telecom
+dailymotion.com	Entertainment
+mapquest.com	Travel
+libero.it	Internet and Telecom
+wetransfer.com	Internet and Telecom
+adorocinema.com	Entertainment
+bankofamerica.com	Finance
+cnet.com	Computers and Electronics
+transfermarkt.de	Sports
+business-standard.com	Finance
+uta-net.com	Entertainment
+thelogic.co	News
+business-humanrights.org	People and Society
+ukr.net	News
+capitalone.com	Finance
+mundodeportivo.com	Sports
+study.com	Jobs and Education
+railyatri.in	Travel
+vinmec.com	Health
+goodhousekeeping.com	Home and Garden
+ro.wikipedia.org	Reference
+coingecko.com	Finance
+gazzetta.it	Sports
+kapook.com	News
+tff.org	Sports
+sssinstagram.com	Entertainment
+nseindia.com	Finance
+baomoi.com	News
+kbb.com	Vehicles
+nordstrom.com	Shopping
+argos.co.uk	Shopping
+emag.ro	Shopping
+eltiempo.es	Science
+lego.com	Hobbies and Leisure
+elpais.com	News
+rozetka.com.ua	Shopping
+tirto.id	News
+daifuku.com	Business
+harvard.edu	Jobs and Education
+journaldesfemmes.fr	Beauty and Fitness
+ticketmaster.com	Entertainment
+flashscore.fr	Sports
+collinsdictionary.com	Reference
+thuvienphapluat.vn	Law and Government
+aniagotuje.pl	Food and Drink
+carsensor.net	Vehicles
+happymod.com	Computers and Electronics
+meesho.com	Shopping
+proxysite.com	Internet and Telecom
+expedia.com	Travel
+deezer.com	Entertainment
+elle.com	Beauty and Fitness
+kurashiru.com	Food and Drink
+ups.com	Business
+todamateria.com.br	Computers and Electronics
+oppo.com	Computers and Electronics
+mail.google.com	Internet and Telecom
+pajak.go.id	Law and Government
+pdf24.org	Computers and Electronics
+bfmtv.com	News
+apollopharmacy.in	Health
+mobile.de	Vehicles
+fdown.net	Internet and Telecom
+parade.com	Entertainment
+wongnai.com	Food and Drink
+flightradar24.com	Travel
+thekitchn.com	Food and Drink
+kapanlagi.com	Entertainment
+loveandlemons.com	Food and Drink
+hamariweb.com	Social Networks
+storysaver.net	Internet and Telecom
+ilmeteo.it	Science
+kanald.com.tr	Entertainment
+recipetineats.com	Food and Drink
+rightmove.co.uk	Real Estate
+repubblica.it	News
+bilibili.tv	Entertainment
+osym.gov.tr	Jobs and Education
+nvidia.com	Computers and Electronics
+sky.com	Internet and Telecom
+mercari.com	Shopping
+meteofrance.com	Science
+mercadolibre.com.co	Shopping
+bappam.market	Shopping
+idealo.de	Shopping
+vidal.fr	Health
+transfermarkt.com	Sports
+americanexpress.com	Finance
+airbnb.com	Travel
+jiosaavn.com	Entertainment
+nerdwallet.com	Finance
+chase.com	Finance
+threads.net	Shopping
+amazon.eg	Shopping
+cricket.com.au	Sports
+webmotors.com.br	Vehicles
+n-tv.de	News
+realtor.com	Real Estate
+free.fr	Internet and Telecom
+nikkei.com	News
+un.org	Law and Government
+jojobetresmi.org	People and Society
+asus.com	Computers and Electronics
+fortnite.com	Games
+line.me	Internet and Telecom
+lavanguardia.com	News
+xfinity.com	Internet and Telecom
+gettyimages.com	Entertainment
+flashscore.es	Sports
+shopify.com	Shopping
+spiegel.de	News
+bola.com	Sports
+next.co.uk	Shopping
+indown.io	Games
+formula1.com	Sports
+transfermarkt.co.id	Sports
+drogaraia.com.br	Health
+japanpost.jp	Business
+workspace.google.com	Business
+duckduckgo.com	Internet and Telecom
+jalan.net	Travel
+t-online.de	News
+argentina.gob.ar	Travel
+ubisoft.com	Games
+mit.edu	Jobs and Education
+ome.tv	Social Networks
+estadao.com.br	News
+treccani.it	Reference
+thetrainline.com	Travel
+indiatoday.in	News
+tripadvisor.es	Travel
+edmunds.com	Vehicles
+aljazeera.net	News
+agoda.com	Travel
+zalando.de	Shopping
+tudocelular.com	Computers and Electronics
+igram.world	Social Networks
+cellphones.com.vn	Computers and Electronics
+kemdikbud.go.id	Jobs and Education
+fahorro.com	Shopping
+bajajfinserv.in	Finance
+bn.wikipedia.org	Reference
+canalplus.com	Entertainment
+ufopa.edu.br	Jobs and Education
+zoom.us	Internet and Telecom
+marksandspencer.com	Shopping
+tripadvisor.it	Travel
+mozilla.org	Internet and Telecom
+espn.com.co	Sports
+cvs.com	Health
+mhlw.go.jp	Law and Government
+bing.com	Internet and Telecom
+dienmayxanh.com	Shopping
+pagesjaunes.fr	Business
+irctc.co.in	Travel
+khanacademy.org	Jobs and Education
+action.com	Shopping
+dell.com	Computers and Electronics
+verizon.com	Internet and Telecom
+olx.ro	Shopping
+nypost.com	News
+goodrx.com	Health
+dazn.com	Sports
+shabdkosh.com	Reference
+waze.com	Vehicles
+basketball-reference.com	Sports
+tbs.co.jp	Entertainment
+lemonde.fr	News
+apartments.com	Real Estate
+jansatta.com	News
+decathlon.fr	Sports
+bol.com	Shopping
+tripadvisor.fr	Travel
+medicalpark.com.tr	Health
+louisvuitton.com	Shopping
+tribuna.com	News
+americanas.com.br	Shopping
+toyota.com	Vehicles
+hotels.com	Travel
+t-mobile.com	Internet and Telecom
+idntimes.com	Entertainment
+flashscore.com	Sports
+revolut.com	Finance
+autotrader.co.uk	Vehicles
+indianrail.gov.in	Travel
+iltalehti.fi	Internet and Telecom
+aol.com	News
+researchgate.net	Science
+no.wikipedia.org	Reference
+reuters.com	News
+easyjet.com	Travel
+flashscore.pl	Sports
+lenovo.com	Computers and Electronics
+banki.ru	Finance
+adac.de	Vehicles
+bom.gov.au	Science
+kerala.gov.in	Law and Government
+independent.co.uk	News
+traveloka.com	Travel
+capcut.com	Computers and Electronics
+alibaba.com	Shopping
+letras.mus.br	Entertainment
+webteb.com	Health
+cnnturk.com	News
+getoctane.io	Business
+today.com	Health
+pozdravok.com	Shopping
+who.int	Health
+timesnownews.com	News
+snapinst.app	Internet and Telecom
+pandora.net	Shopping
+verywellhealth.com	Health
+streameast.app	Entertainment
+da.wikipedia.org	Reference
+thethaovanhoa.vn	Sports
+karnataka.gov.in	Law and Government
+word.tips	Reference
+tvp.pl	Entertainment
+ndtv.in	News
+deepai.org	Computers and Electronics
+emojipedia.org	Internet and Telecom
+friv.com	Games
+thesun.co.uk	News
+adidas.com	Shopping
+stackoverflow.com	Computers and Electronics
+scribbr.com	Jobs and Education
+brainly.com	Jobs and Education
+laliga.com	Sports
+quizizz.com	Jobs and Education
+onlinesbi.sbi	Finance
+otomoto.pl	Vehicles
+ndr.de	News
+fullhdfilmizlesene.de	Entertainment
+lg.com	Computers and Electronics
+subito.it	Shopping
+marriott.com	Travel
+rtve.es	News
+mashable.com	Entertainment
+yemek.com	Food and Drink
+fptshop.com.vn	Shopping
+att.com	Internet and Telecom
+archive.org	Reference
+coolmathgames.com	Games
+coinbase.com	Finance
+francetvinfo.fr	News
+tvspielfilm.de	Entertainment
+yale.edu	Jobs and Education
+clarin.com	News
+boots.com	Health
+telkomsel.com	Internet and Telecom
+mcdonalds.com	Food and Drink
+op.gg	Games
+tvguide.com	Entertainment
+kwai.com	Social Networks
+tycsports.com	Sports
+state.gov	Law and Government
+bibliaonline.com.br	People and Society
+chess.com	Games
+mediaexpert.pl	Shopping
+sat.gob.mx	Law and Government
+studentaid.gov	Jobs and Education
+bahn.de	Travel
+anses.gob.ar	Law and Government
+duolingo.com	Jobs and Education
+championat.com	Sports
+almasryalyoum.com	News
+matchendirect.fr	Sports
+sondakika.com	News
+finanzen.net	Finance
+espn.com.ar	Sports
+myupchar.com	Health
+atptour.com	Sports
+3bmeteo.com	Science
+belastingdienst.nl	Law and Government
+bg.wikipedia.org	Reference
+acibadem.com.tr	Health
+icicibank.com	Finance
+ubereats.com	Food and Drink
+mymovies.it	Entertainment
+iloveimg.com	Computers and Electronics
+rbc.ru	News
+npr.org	News
+ssyoutube.com	Internet and Telecom
+sportskeeda.com	Sports
+sirogohan.com	Food and Drink
+ziprecruiter.com	Jobs and Education
+kemenag.go.id	People and Society
+dior.com	Shopping
+eci.gov.in	Law and Government
+reclameaqui.com.br	Business
+elcorteingles.es	Shopping
+asos.com	Shopping
+siamsport.co.th	Sports
+statista.com	Business
+ebay.de	Shopping
+snapchat.com	Social Networks
+bachhoaxanh.com	Shopping
+drogasil.com.br	Health
+kia.com	Vehicles
+ecentral.my	Reference
+famousbirthdays.com	People and Society
+businessinsider.com	Finance
+aemps.es	Health
+ssa.gov	Law and Government
+bancodevenezuela.com	Finance
+npistanbul.com	Travel
+hmv.co.jp	Shopping
+abril.com.br	Entertainment
+pbs.org	Entertainment
+shopee.tw	Shopping
+ya.ru	Internet and Telecom
+weather.gov	Science
+sr.wikipedia.org	Reference
+cuemath.com	Jobs and Education
+falabella.com	Shopping
+correios.com.br	Business
+larousse.fr	Reference
+prabhatkhabar.com	News
+yallakora.com	Sports
+y8.com	Games
+fanatik.com.tr	Sports
+slideshare.net	Internet and Telecom
+hellosehat.com	Health
+kikkoman.co.jp	Food and Drink
+pmkisan.gov.in	Law and Government
+simplyrecipes.com	Food and Drink
+financialexpress.com	Finance
+haber7.com	News
+macys.com	Shopping
+gaana.com	Entertainment
+abc.net.au	News
+cancer.gov	Health
+mercadolibre.cl	Shopping
+nasa.gov	Science
+tn.gov.in	Law and Government
+udn.com	News
+tenor.com	Internet and Telecom
+aa.com	Computers and Electronics
+wordreference.com	Reference
+xataka.com	Computers and Electronics
+zoom.com	Internet and Telecom
+gamerant.com	Games
+kidshealth.org	Health
+filmyfly.phd	Entertainment
+dickssportinggoods.com	Sports
+vegamovies.lc	Entertainment
+amazon.com.tr	Shopping
+wildberries.ru	Shopping
+realme.com	Computers and Electronics
+techtarget.com	Computers and Electronics
+gap.com	Shopping
+buzzfeed.com	News
+diy.com	Home and Garden
+siloamhospitals.com	Health
+ruangguru.com	Jobs and Education
+oracleafrika.co.za	People and Society
+uniqlo.com	Shopping
+otto.de	Shopping
+apkpure.com	Computers and Electronics
+dergipark.org.tr	Science
+wix.com	Internet and Telecom
+www.gov.pl	Law and Government
+abc.es	News
+puma.com	Sports
+seriouseats.com	Food and Drink
+calendarr.com	Reference
+steamcommunity.com	Games
+storiesig.info	Social Networks
+chip.de	Computers and Electronics
+casasbahia.com.br	Shopping
+desmos.com	Science
+skyscanner.net	Travel
+garena.com	Games
+trip.com	Travel
+pokemon.com	Games
+nsw.gov.au	Law and Government
+m.wikipedia.org	Reference
+vedantu.com	Jobs and Education
+freeconvert.com	Computers and Electronics
+sozcu.com.tr	News
+lacentrale.fr	Vehicles
+westernunion.com	Finance
+aemet.es	Science
+jio.com	Internet and Telecom
+shazam.com	Entertainment
+eapteka.ru	Health
+piliapp.com	Internet and Telecom
+sncf-connect.com	Travel
+vidio.com	Entertainment
+elconfidencial.com	News
+coursera.org	Jobs and Education
+nasdaq.com	Finance
+leagueoflegends.com	Games
+kp.ru	News
+gitam.edu	Jobs and Education
+fattoincasadabenedetta.it	Food and Drink
+u.gg	Games
+thesaurus.com	Reference
+oricon.co.jp	Entertainment
+bankbazaar.com	Finance
+temp-mail.org	Internet and Telecom
+vidal.ru	Shopping
+atv.com.tr	Sports
+sites.google.com	Internet and Telecom
+ny.gov	Law and Government
+russianfood.com	Food and Drink
+metoffice.gov.uk	Science
+moovitapp.com	Travel
+moviesda.tube	Entertainment
+tf1.fr	Sports
+besoccer.com	Sports
+mediamarkt.de	Shopping
+footystats.org	Sports
+statmuse.com	Sports
+akc.org	Pets and Animals
+sephora.com	Beauty and Fitness
+unam.mx	Jobs and Education
+clever.com	Jobs and Education
+fnac.com	Shopping
+islamweb.net	People and Society
+antaranews.com	News
+wellsfargo.com	Finance
+blizzard.com	Games
+p-world.co.jp	Shopping
+sportschau.de	Sports
+herzindagi.com	People and Society
+bankrate.com	Finance
+ok.ru	Social Networks
+cleartax.in	Finance
+indiapost.gov.in	Law and Government
+last.fm	Entertainment
+sindonews.com	News
+ufpe.br	Jobs and Education
+redbus.in	Travel
+yalla-shoot-tv.live	Sports
+adp.com	Jobs and Education
+umsu.ac.id	Jobs and Education
+pcmag.com	Computers and Electronics
+borsaitaliana.it	Finance
+telangana.gov.in	Law and Government
+tvn24.pl	News
+messenger.com	Internet and Telecom
+sejda.com	Computers and Electronics
+walgreens.com	Health
+kmart.com.au	Shopping
+amazon.com.au	Shopping
+gadgets360.com	Computers and Electronics
+rome2rio.com	Travel
+cuisineaz.com	Food and Drink
+mako.co.il	News
+cosme.net	Beauty and Fitness
+goo-net.com	Vehicles
+protothema.gr	News
+ford.com	Vehicles
+giphy.com	Entertainment
+justanswer.com	Law and Government
+jusbrasil.com.br	Law and Government
+bikedekho.com	Vehicles
+toyota.jp	Vehicles
+fifa.com	Sports
+cloudconvert.com	Computers and Electronics
+udemy.com	Jobs and Education
+boursorama.com	Finance
+ensonhaber.com	News
+porsche.com	Vehicles
+ica.se	Shopping
+anydesk.com	Computers and Electronics
+photoroom.com	Entertainment
+20minutes.fr	News
+vecteezy.com	Entertainment
+haremaltin.com	Entertainment
+naukri.com	Jobs and Education
+caf.fr	Law and Government
+aftonbladet.se	News
+dantri.com.vn	News
+okdiario.com	News
+express.co.uk	News
+filmyfly.fi	Entertainment
+pons.com	Reference
+beyazperde.com	Entertainment
+freepik.es	Entertainment
+okezone.com	News
+doccheck.com	Health
+choicesupport.org.uk	People and Society
+kahoot.it	Jobs and Education
+ad.nl	News
+epey.com	Shopping
+texastribune.org	News
+petmd.com	Pets and Animals
+soccerway.com	Sports
+huawei.com	Computers and Electronics
+eltiempo.com	News
+diyanet.gov.tr	People and Society
+suumo.jp	Real Estate
+taraftarium.co	Sports
+ibm.com	Computers and Electronics
+farfetch.com	Shopping
+immobilienscout24.de	Real Estate
+bolavip.com	Sports
+asics.com	Sports
+blic.rs	News
+healthdirect.gov.au	Health
+ole.com.ar	Sports
+anonyig.com	Social Networks
+netshoes.com.br	Shopping
+mathway.com	Jobs and Education
+foodnetwork.com	Food and Drink
+carmax.com	Vehicles
+nsdl.com	Finance
+staseraintv.com	Entertainment
+stockx.com	Shopping
+tesco.com	Shopping
+doctolib.fr	Health
+liverpool.com.mx	Shopping
+asda.com	Shopping
+exame.com	Finance
+cbc.ca	News
+fanpage.it	Entertainment
+airtel.in	Internet and Telecom
+honda.com	Vehicles
+sonora.id	News
+mp4moviez.domains	Entertainment
+godaddy.com	Internet and Telecom
+1177.se	Health
+inps.it	Law and Government
+hasil.gov.my	Law and Government
+filgoal.com	Sports
+legaseriea.it	Sports
+fidelity.com	Finance
+pngtree.com	Entertainment
+raiplay.it	Entertainment
+quran.com	People and Society
+brainly.in	Jobs and Education
+virgilio.it	Reference
+claro.com.br	Internet and Telecom
+asahi.com	News

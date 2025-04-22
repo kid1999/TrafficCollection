@@ -40,6 +40,19 @@ def read_urls_by_cow(path):
     return urls, names
 
 
+def read_urls_by_cow2(path):
+    urls = []
+    names = []
+    with open(path, 'r') as f:
+        lines = f.readlines()
+
+    for line in lines:
+        url = line.split('\t')[0]
+        urls.append('https://' + url.strip())
+        names.append(url.strip())
+    return urls, names
+
+
 def kill_dumpcap():
     """ 终止 dumpcap 进程 """
     try:
@@ -84,24 +97,30 @@ if __name__ == '__main__':
     #     # print([url], organization)
     #     index += 1
 
-    # urls, organizations = read_urls('./config/top_1w_urls.csv')
-    # index = 0
-    # for url_, organization in zip(urls[1:], organizations[1:]):
-    #     for url in url_:
-    #         name = organization + '-' + url.split('/')[-1]
-    #         main([url], name, index)
-    #         # print(name, url)
-    #         index += 1
-
     # top 1w github仓库
-    urls, names = read_urls_by_cow('./config/top_1w_urls.txt')
+    # urls, names = read_urls_by_cow('./config/top_1w_urls.txt')
+    # index = 0
+    # end = 10000
+    # for url, name in zip(urls[index:end], names[index:end]):
+    #     for _ in range(10):
+    #         main([url], name, index)
+    #         kill_zombie_processes()
+    #         time.sleep(1.5)
+    #     index += 1
+    #     # 额外检查 dumpcap 是否仍在运行
+    #     kill_dumpcap()
+    
+    
+    # top 1K 热门网站
+    urls, names = read_urls_by_cow2('./config/top_1000.txt')
     index = 0
     end = 1000
     for url, name in zip(urls[index:end], names[index:end]):
-        for _ in range(100):
+        for _ in range(10):
+            # print(url, name)
             main([url], name, index)
             kill_zombie_processes()
-            time.sleep(1.5)
+            # time.sleep(1.5)
         index += 1
         # 额外检查 dumpcap 是否仍在运行
         kill_dumpcap()
