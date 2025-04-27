@@ -82,6 +82,19 @@ python client.py
 Finally, all pcap files and logs will be output to `output_dir`
 
 
+#### Spider Mode
+Just visit the websites and create the traffic, not store files. You can use the tools, such as Wireshark, to analyze the captured traffic.
+
+```shell
+python just_spider.py
+```
+
+#### Traffic Mode
+Just random collect traffic, not store files.
+```shell
+python random_spider.py
+```
+
 
 ### Data Migration
 ```shell

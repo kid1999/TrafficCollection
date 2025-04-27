@@ -2,4 +2,4 @@ datas
 *.log
 .venv
 analysis
-config.ini
+config/config.ini
