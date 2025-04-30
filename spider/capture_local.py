@@ -1,194 +1,116 @@
-import os
-import queue
-import threading
 import datetime
-import subprocess
+import os
 import socket
-import psutil
+import subprocess
+import threading
+import time
+import signal
+import platform
 
 from config.config import config
 from config.logger import logger
 from spider.spider import SequentialSpider
 
 
-def kill_process_and_children(parent_pid):
-    """确保杀掉 tshark 及其子进程"""
-    try:
-        parent = psutil.Process(parent_pid)
-        children = parent.children(recursive=True)
-        for child in children:
-            child.terminate()
-        gone, still_alive = psutil.wait_procs(children, timeout=2)
-        for child in still_alive:
-            child.kill()
-        parent.terminate()
-    except psutil.NoSuchProcess:
-        pass
-
-
 class TrafficCapture:
     def __init__(self):
-        """流量捕获器"""
-        self.interface = config["spider"]["interface"]  # 从配置读取网卡
-        self.output_dir = config["spider"]["output_dir"]  # 从配置读取存储路径
+        self.interface = config["spider"]["interface"]
+        self.output_dir = config["spider"]["output_dir"]
         os.makedirs(self.output_dir, exist_ok=True)
 
-        # 队列存储流量数据，异步写入
-        self.data_queue = queue.Queue(maxsize=100)
-
-        self.tshark_process = None
-        self.capture_thread = None
-        self.write_thread = None
-        self.stop_event = threading.Event()
-
         self.output_file = None
+        self.tshark_process = None
+        self.stop_event = threading.Event()
+        self.is_windows = platform.system().lower() == "windows"
 
-    def _generate_filename(self, organization, index):
-        """生成基于时间戳的唯一文件名"""
-        timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S%f")
-        return os.path.join(self.output_dir, f"{index}_{organization}_{timestamp}.pcap")
+    def _generate_filename(self, org, index):
+        ts = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+        return os.path.join(self.output_dir, f"{index}_{org}_{ts}.pcap")
 
-    def _capture_output(self):
-        """将 tshark 输出数据写入队列"""
-        try:
-            while not self.stop_event.is_set():
-                data = self.tshark_process.stdout.read(4096)  # 分块读取
-                if not data:
-                    break
-                self.data_queue.put(data)
-        except Exception as e:
-            logger.error(f"读取 tshark 输出失败: {e}")
-
-    def _write_to_file(self):
-        """将数据队列写入本地文件"""
-        logger.info("启动本地文件写入线程")
-        with open(self.output_file, "wb") as f:
-            while not self.stop_event.is_set() or not self.data_queue.empty():
-                try:
-                    data = self.data_queue.get(timeout=1)
-                    f.write(data)
-                except queue.Empty:
-                    continue
-            logger.info(f"数据写入完成: {self.output_file}")
-
-    def start_capture(self, organization, index, duration=30):
-        """启动流量捕获"""
-        logger.info(f"开始流量捕获: {organization} - {index}")
-
-        # 生成输出文件路径
-        self.output_file = self._generate_filename(organization, index)
-
-        # tshark命令
-        command = [
-            "tshark",
-            "-i",
-            self.interface,  # 从配置读取网卡
-            "-w",
-            "-",  # 输出到标准输出流
-            "-a",
-            f"duration:{duration}",  # 捕获时长
-        ]
+    def start(self, org, index, duration=30):
+        self.output_file = self._generate_filename(org, index)
+        cmd = ["tshark", "-i", self.interface, "-w", self.output_file, "tcp or udp"]
 
         try:
-            self.tshark_process = subprocess.Popen(
-                command, stdout=subprocess.PIPE, stderr=subprocess.PIPE
-            )
+            logger.info(f"启动 tshark 采集: {' '.join(cmd)}")
 
-            # 启动读取线程
-            self.capture_thread = threading.Thread(
-                target=self._capture_output, daemon=True
-            )
-            self.capture_thread.start()
-
-            # 启动写入线程
-            self.write_thread = threading.Thread(
-                target=self._write_to_file, daemon=True
-            )
-            self.write_thread.start()
-
-            logger.info("流量捕获线程已启动")
+            # 根据操作系统选择不同的启动方式
+            if self.is_windows:
+                self.tshark_process = subprocess.Popen(
+                    cmd,
+                    stdout=subprocess.DEVNULL,
+                    stderr=subprocess.PIPE,
+                    creationflags=subprocess.CREATE_NEW_PROCESS_GROUP  # 在 Windows 上使用新进程组
+                )
+            else:
+                self.tshark_process = subprocess.Popen(
+                    cmd,
+                    stdout=subprocess.DEVNULL,
+                    stderr=subprocess.PIPE,
+                    preexec_fn=os.setsid  # 在 Unix 上创建一个新的进程组
+                )
             return True
-
         except Exception as e:
-            logger.error(f"启动流量捕获失败: {e}")
+            logger.error(f"启动 tshark 失败: {e}")
             return False
 
-    def stop_capture(self):
-        """停止流量捕获"""
-        logger.info("停止流量捕获")
 
-        # 停止事件
-        self.stop_event.set()
+    def stop(self):
+        if self.tshark_process and self.tshark_process.poll() is None:
+            try:
+                # 等待爬虫任务结束后发送停止信号
+                logger.info("发送 SIGINT 终止 tshark")
+                if self.is_windows:
+                    self.tshark_process.send_signal(signal.CTRL_BREAK_EVENT)  # Windows 特有的信号
+                else:
+                    os.killpg(os.getpgid(self.tshark_process.pid), signal.SIGINT)  # 发送 SIGINT 信号
 
-        # 杀掉 tshark 及其子进程
-        if self.tshark_process:
-            kill_process_and_children(self.tshark_process.pid)
-            self.tshark_process.wait()
+                # 等待 tshark 完成数据写入
+                self.tshark_process.wait(timeout=10)
+            except Exception as e:
+                logger.warning(f"优雅终止失败，尝试强杀: {e}")
+                self.tshark_process.kill()  # 强制终止进程
 
-        # 等待线程结束
-        self.capture_thread.join()
-        self.write_thread.join()
-
-        logger.info(f"流量捕获完成，数据保存至: {self.output_file}")
-        return self.output_file
+        logger.info(f"流量捕获结束，文件保存至: {self.output_file}")
 
 
-def _get_target_ip(url):
-    """解析 URL 获取目标 IP 地址"""
+def resolve_ip(url):
     try:
-        hostname = url.split("://")[-1].split("/")[0]
-        return socket.gethostbyname(hostname)
+        return socket.gethostbyname(url.split("://")[-1].split("/")[0])
     except Exception as e:
-        logger.error(f"解析 URL {url} 失败: {e}")
+        logger.error(f"URL 解析失败: {e}")
         return None
 
 
-def run_task(urls, organization, index, duration=30):
-    """爬虫 + 流量监听任务"""
+def run_task(urls, org, index, duration=30):
     if not urls:
-        logger.error("没有提供 URL")
+        logger.error("URL 列表为空")
         return False
 
-    # 初始化流量捕获
+    ip = resolve_ip(urls[0])
+    if not ip:
+        return False
+    logger.info(f"目标 IP: {ip}")
+
     capture = TrafficCapture()
-
-    # 解析第一个 URL 获取目标 IP
-    target_ip = _get_target_ip(urls[0])
-    if not target_ip:
-        logger.error("无法解析目标 IP")
+    if not capture.start(org, index, duration):
         return False
 
-    logger.info(f"解析目标 IP 成功: {target_ip}")
-
-    # 启动流量监听
-    if not capture.start_capture(organization, index, duration):
-        logger.error("启动流量捕获失败")
-        return False
-
-    # 启动爬虫任务
     try:
-        logger.info(f"开始爬取 URLs: {urls}")
-        spider = SequentialSpider(urls)
-        spider.scrape()
+        # 启动爬虫任务
+        SequentialSpider(urls).scrape()
         logger.info("爬虫任务完成")
     except Exception as e:
-        logger.error(f"爬虫出错: {e}")
+        logger.error(f"爬虫异常: {e}")
     finally:
-        pcap_file = capture.stop_capture()
+        # 确保捕获进程完全停止
+        capture.stop()
+        time.sleep(1)  # 额外等待，确保进程完全停止
 
-    logger.info(f"流量保存至: {pcap_file}")
     return True
 
 
-def main(urls, organization, index, duration=30):
-    """统一入口"""
-    logger.info(f"开始任务 {index}_{organization}，URL 数量: {len(urls)}")
-
-    success = run_task(urls, organization, index, duration)
-
-    if success:
-        logger.info(f"任务 {index}_{organization} 成功")
-    else:
-        logger.error(f"任务 {index}_{organization} 失败")
-
-    logger.info(f"任务 {index}_{organization} 结束")
+def main(urls, org, index, duration=30):
+    logger.info(f"任务开始: {index}_{org}，URL 数量: {len(urls)}")
+    result = run_task(urls, org, index, duration)
+    logger.info(f"任务 {'成功' if result else '失败'}: {index}_{org}")
